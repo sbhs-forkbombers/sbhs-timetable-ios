@@ -22,16 +22,13 @@
     m = seconds % 60;
     seconds /= 60;
     h = seconds;
-    if (h >= 0) {
+    if (h > 0) {
         return [NSString stringWithFormat:@"%02dh %02dm %02ds", h, m, s];
     } else {
         return [NSString stringWithFormat:@"%02dm %02ds", m, s];
     }
 }
 
-- (long) msUntilNextEvent {
-    return 0L;
-}
 
 - (BOOL) needsMidnightCountdown {
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -56,10 +53,8 @@
     NSDateComponents *components = [cal components:units fromDate:[NSDate date]];
     NSInteger weekday = [components weekday];
     if (weekday == 7) {
-        NSLog(@"Day offset = 1");
         return 1;
     } else if (weekday == 6) {
-        NSLog(@"Day offset = 2");
         return 2;
     }
     return 0;
@@ -72,7 +67,12 @@
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
     NSUInteger preservedComponents = (NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit);
     date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:date]];
-    NSInteger secondsLeft = [date timeIntervalSinceNow] + 86400;
+    NSInteger secondsLeft;
+    if ([self needsMidnightCountdown]) {
+        secondsLeft = [date timeIntervalSinceNow] + 86400;
+    } else {
+        secondsLeft = [date timeIntervalSinceNow];
+    }
     return [[NSDate date] dateByAddingTimeInterval:offset + secondsLeft];
 }
 

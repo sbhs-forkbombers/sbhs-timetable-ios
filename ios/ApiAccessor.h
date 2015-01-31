@@ -18,5 +18,5 @@
 
 - (void) fetchBelltimes;
 - (BOOL) belltimesAvailable;
-- (BelltimesJson*) getBelltimes;
+- (BelltimesJson*) getBelltimes;    
 @end

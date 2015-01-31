@@ -40,7 +40,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="bigLabel" destination="KQZ-1w-vlD" id="njl-4o-TPg"/>
+                        <outlet property="countdownLabel" destination="KQZ-1w-vlD" id="bAT-tj-7dY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

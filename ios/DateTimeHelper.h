@@ -14,8 +14,6 @@
 
 + (NSString*) formatSecondsLeft:(int)seconds;
 
-- (long) msUntilNextEvent;
-
 - (BOOL) needsMidnightCountdown;
 
 - (int) getDayOffset;

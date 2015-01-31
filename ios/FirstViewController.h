@@ -10,7 +10,7 @@
 
 @interface FirstViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *bigLabel;
+@property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
 
 - (void)updateCounter:(NSTimer *)theTimer;
 - (void)countdownTimer;

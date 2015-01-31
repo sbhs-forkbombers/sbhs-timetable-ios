@@ -33,11 +33,16 @@ DateTimeHelper *dth;
     if (bells == nil) {
         return -1;
     }
-    return 0;
+    int i;
+    for (i = 0; i < bells.count; i++) {
+        if ([[self getTimeForIndex:i] timeIntervalSinceNow] > 0) {
+            break;
+        }
+    }
+    return i;
 }
 
-- (NSDate*) getNextEventTime {
-    int index = [self getNextEventIndex];
+- (NSDate*) getTimeForIndex:(int)index {
     NSArray *bells = _belltimes[@"bells"];
     NSDictionary *bell = bells[index];
     NSString *bellTime = bell[@"time"];
@@ -48,6 +53,10 @@ DateTimeHelper *dth;
     NSDate *nextDay = [dth getNextSchoolDay];
     
     return [nextDay dateByAddingTimeInterval:60*minute+3600*hour];
+}
+
+- (NSDate*) getNextEventTime {
+    return [self getTimeForIndex:[self getNextEventIndex]];
     
 }
 
