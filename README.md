@@ -6,4 +6,4 @@ dependencies using `pod install`.
 
 Open the xcworkspace file, not the xcodeproj.
 
-!(http://img.pandawhale.com/post-29966-ITS-HAPPENING-gif-Ron-Paul-HD-xThK.gif)
+<img src="http://img.pandawhale.com/post-29966-ITS-HAPPENING-gif-Ron-Paul-HD-xThK.gif" />
