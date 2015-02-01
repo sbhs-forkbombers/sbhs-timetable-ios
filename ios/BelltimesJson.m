@@ -28,6 +28,14 @@ DateTimeHelper *dth;
     return _belltimes[@"day"];
 }
 
+- (NSString*) getNextEventName {
+    int index = [self getNextEventIndex];
+    NSDictionary *bell = (NSDictionary*)((NSArray*)_belltimes[@"bells"])[index];
+    
+    return [bell[@"bell"] stringByReplacingOccurrencesOfString:@"Roll Call" withString:@"School Starts"];
+}
+
+
 - (int)getNextEventIndex {
     NSArray *bells = _belltimes[@"bells"];
     if (bells == nil) {

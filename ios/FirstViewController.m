@@ -9,7 +9,6 @@
 #import "FirstViewController.h"
 #import "ApiAccessor.h"
 #import "DateTimeHelper.h"
-#import <AFHTTPSessionManager.h>
 #import "BelltimesJson.h"
 @interface FirstViewController ()
 
@@ -42,7 +41,7 @@ BelltimesJson *bells;
     } else {
         bells = [api getBelltimes];
         NSDate *time = [bells getNextEventTime];
-        
+        [self.periodLabel setText:[bells getNextEventName]];
         [self.countdownLabel setText:[DateTimeHelper formatSecondsLeft:[time timeIntervalSinceNow]]];
     }
 }

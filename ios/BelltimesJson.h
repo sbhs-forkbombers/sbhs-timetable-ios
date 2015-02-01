@@ -16,6 +16,8 @@
 
 - (NSString*) getDayName;
 
+- (NSString*) getNextEventName;
+
 - (int) getNextEventIndex;
 
 - (NSDate*) getNextEventTime;

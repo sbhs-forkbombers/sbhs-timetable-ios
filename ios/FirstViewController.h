@@ -10,6 +10,7 @@
 
 @interface FirstViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UILabel *periodLabel;
 @property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
 
 - (void)updateCounter:(NSTimer *)theTimer;

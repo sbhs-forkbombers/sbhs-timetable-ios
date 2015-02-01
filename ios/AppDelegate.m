@@ -17,6 +17,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs objectForKey:@"sessionID"] != nil) {
+        NSLog(@"Already got a session ID: %@", [prefs objectForKey:@"sessionID"]);
+        self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+
+    } else {
+        NSLog(@"No session ID yet!");
+        UIViewController* rootController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+        
+        self.window.rootViewController = navigation;
+
+    }
+    
     return YES;
 }
 

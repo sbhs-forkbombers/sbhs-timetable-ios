@@ -19,6 +19,7 @@
 		F49A7AAC1A7CE157003EA762 /* BelltimesJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AAB1A7CE157003EA762 /* BelltimesJson.m */; };
 		F49A7AB21A7CED9C003EA762 /* DateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB11A7CED9C003EA762 /* DateTimeHelper.m */; };
 		F49A7AB81A7CFFB2003EA762 /* ApiAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB71A7CFFB2003EA762 /* ApiAccessor.m */; };
+		F4A69A051A7E05EE0051DDB3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A69A041A7E05EE0051DDB3 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		F49A7AB11A7CED9C003EA762 /* DateTimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeHelper.m; sourceTree = "<group>"; };
 		F49A7AB61A7CFFB2003EA762 /* ApiAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiAccessor.h; sourceTree = "<group>"; };
 		F49A7AB71A7CFFB2003EA762 /* ApiAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAccessor.m; sourceTree = "<group>"; };
+		F4A69A031A7E05EE0051DDB3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F4A69A041A7E05EE0051DDB3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				F432AFC51A7CC77E007B2AF9 /* AppDelegate.h */,
 				F432AFC61A7CC77E007B2AF9 /* AppDelegate.m */,
 				F432AFC81A7CC77E007B2AF9 /* FirstViewController.h */,
+				F4A69A031A7E05EE0051DDB3 /* LoginViewController.h */,
+				F4A69A041A7E05EE0051DDB3 /* LoginViewController.m */,
 				F432AFC91A7CC77E007B2AF9 /* FirstViewController.m */,
 				F432AFCB1A7CC77E007B2AF9 /* SecondViewController.h */,
 				F432AFCC1A7CC77E007B2AF9 /* SecondViewController.m */,
@@ -298,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A69A051A7E05EE0051DDB3 /* LoginViewController.m in Sources */,
 				F49A7AB81A7CFFB2003EA762 /* ApiAccessor.m in Sources */,
 				F432AFCD1A7CC77E007B2AF9 /* SecondViewController.m in Sources */,
 				F432AFC71A7CC77E007B2AF9 /* AppDelegate.m in Sources */,
