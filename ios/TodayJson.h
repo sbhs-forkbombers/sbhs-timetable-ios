@@ -12,4 +12,7 @@
 
 - (id) initWithDictionary:(NSDictionary*)today;
 
+- (NSDictionary*) getPeriod:(NSUInteger)num;
+
+
 @end

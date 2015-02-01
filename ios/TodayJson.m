@@ -16,8 +16,15 @@ NSDictionary* _today;
     self = [super init];
     if (self) {
         _today = json;
+        NSLog(@"%@", _today);
     }
     return self;
+}
+
+- (NSDictionary*) getPeriod:(NSUInteger)num {
+    NSString *s = [NSString stringWithFormat:@"%lu", (unsigned long)num];
+    NSLog(s);
+    return _today[@"timetable"][s];
 }
 
 @end

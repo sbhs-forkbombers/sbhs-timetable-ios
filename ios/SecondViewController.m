@@ -8,15 +8,23 @@
 
 #import "SecondViewController.h"
 #import "TodayTableViewCell.h"
+#import "ApiAccessor.h"
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController
-
+ApiAccessor *api;
+TodayJson *today;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    api = [[ApiAccessor alloc] initWithSessionID:[ApiAccessor loadSessionIDFromPrefs]];
+    [api fetchToday:^{
+        today = [api getToday];
+        NSLog(@"reloadData - %@", today);
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +51,15 @@
         [tableView registerNib:[UINib nibWithNibName:@"TodayUITableCell" bundle:nil] forCellReuseIdentifier:@"TodayJsonCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:ident];
     }
-    
-    cell.subjectLabel.text = @"Subject";
-    cell.infoLabel.text = @"with Teacher in Room";
+    if (today == nil) {
+        NSLog(@"Today is nil");
+        cell.subjectLabel.text = @"Subject";
+        cell.infoLabel.text = @"with Teacher in Room";
+    } else {
+        NSDictionary *data = [today getPeriod:indexPath.row+1];
+        cell.subjectLabel.text = data[@"fullName"];
+        cell.infoLabel.text = [NSString stringWithFormat:@"with %@ in %@", data[@"fullTeacher"] , data[@"room"]];
+    }
     NSLog(@"Returned cell");
     return cell;
 }

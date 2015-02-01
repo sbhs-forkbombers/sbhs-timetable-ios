@@ -9,14 +9,19 @@
 
 #import <Foundation/Foundation.h>
 #import "BelltimesJson.h"
-
+#import "TodayJson.h"
 @interface ApiAccessor : NSObject
 @property (strong,nonatomic) NSString* sessionID;
 @property (strong,nonatomic) BelltimesJson* bells;
-
+@property (strong,nonatomic) TodayJson* today;
 - (id) initWithSessionID:(NSString*)sessID;
++ (NSString*) loadSessionIDFromPrefs;
 
 - (void) fetchBelltimes;
 - (BOOL) belltimesAvailable;
-- (BelltimesJson*) getBelltimes;    
+- (BelltimesJson*) getBelltimes;
+
+- (void) fetchToday:(void (^)(void))todayAvailable;
+- (BOOL) todayAvailable;
+- (TodayJson*) getToday;
 @end

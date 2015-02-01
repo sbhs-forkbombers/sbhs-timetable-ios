@@ -22,6 +22,11 @@ AFHTTPSessionManager *manager;
     return self;
 }
 
++ (NSString*) loadSessionIDFromPrefs {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs objectForKey:@"sessionID"];
+}
+
 - (void) fetchBelltimes {
     
     [manager GET:@"/api/belltimes?date=2015-2-3" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -40,6 +45,25 @@ AFHTTPSessionManager *manager;
 
 - (BelltimesJson*) getBelltimes {
     return self.bells;
+}
+
+- (void) fetchToday:(void (^)(void))todayAvailable {
+    [manager GET:@"/api/today.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.today = [[TodayJson alloc] initWithDictionary:(NSDictionary*)responseObject];
+        todayAvailable();
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (BOOL) todayAvailable {
+    return self.today != nil;
+}
+
+- (TodayJson *) getToday {
+    return self.today;
 }
 
 @end
