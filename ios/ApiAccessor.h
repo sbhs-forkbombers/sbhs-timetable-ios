@@ -10,10 +10,12 @@
 #import <Foundation/Foundation.h>
 #import "BelltimesJson.h"
 #import "TodayJson.h"
+#import "DateTimeHelper.h"
 @interface ApiAccessor : NSObject
 @property (strong,nonatomic) NSString* sessionID;
 @property (strong,nonatomic) BelltimesJson* bells;
 @property (strong,nonatomic) TodayJson* today;
+@property (strong,nonatomic) DateTimeHelper* dth;
 - (id) initWithSessionID:(NSString*)sessID;
 + (NSString*) loadSessionIDFromPrefs;
 

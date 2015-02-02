@@ -11,6 +11,7 @@
 @implementation BelltimesJson 
 NSDictionary *_belltimes;
 DateTimeHelper *dth;
+
 - (id) initWithDictionary:(NSDictionary *)json {
     self = [super init];
     if (self) {

@@ -19,4 +19,6 @@
 - (int) getDayOffset;
 
 - (NSDate*) getNextSchoolDay;
+
+- (NSString*) getDateString;
 @end

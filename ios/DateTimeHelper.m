@@ -76,4 +76,10 @@
     return [[NSDate date] dateByAddingTimeInterval:offset + secondsLeft];
 }
 
+- (NSString*) getDateString {
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"yyyy-MM-dd"];
+    return [f stringFromDate:[self getNextSchoolDay]];
+}
+
 @end

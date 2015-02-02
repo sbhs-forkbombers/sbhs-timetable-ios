@@ -10,7 +10,7 @@
 
 @interface BelltimesJson : NSObject
 
-@property (nonatomic) BOOL stale; // is the today.json represented by this file from the cache?
+@property (nonatomic) BOOL stale; // are the belltimes represented by this file considered outdated according to some arbitrary rules I'll come up with later?
 
 - (id) initWithDictionary:(NSDictionary*)json;
 

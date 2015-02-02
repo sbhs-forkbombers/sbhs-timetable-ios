@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "TodayJson.h"
+#import "BelltimesJson.h"
 @interface JsonCacheManager : NSObject
 
-+ (NSString*) getDateString;
++ (TodayJson*) loadTodayJson:(NSString*)date;
++ (void) cacheTodayJson:(NSString *)date data:(NSDictionary *)d;
 
-+ (void) loadTodayJson:(NSString*)date;
-
-+ (void) loadBelltimesJson:(NSString*)date;
++ (BelltimesJson*) loadBelltimesJson:(NSString*)date;
++ (void) cacheBelltimesJson:(NSString *)date data:(NSDictionary *)d;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ApiAccessor.h"
 #import <AFHTTPSessionManager.h>
+#import "DateTimeHelper.h"
 static ApiAccessor* instance;
 
 @implementation ApiAccessor
@@ -16,6 +17,7 @@ AFHTTPSessionManager *manager;
     self = [super init];
     if (self) {
         [self setSessionID:sessID];
+        [self setDth:[[DateTimeHelper alloc] initWithBelltimes:nil]]; // XXX this will break probably
     }
     manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:@"https://sbhstimetable.tk/"]];
 
@@ -28,8 +30,8 @@ AFHTTPSessionManager *manager;
 }
 
 - (void) fetchBelltimes:(void (^)(NSError*))err {
-    
-    [manager GET:@"/api/belltimes?date=2015-2-3" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSString *date = [self.dth getDateString];
+    [manager GET:[NSString stringWithFormat:@"/api/belltimes?date=%@", date] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.bells = [[BelltimesJson alloc] initWithDictionary:(NSDictionary*)responseObject];
         
