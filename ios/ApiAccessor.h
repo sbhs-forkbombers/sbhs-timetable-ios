@@ -17,11 +17,11 @@
 - (id) initWithSessionID:(NSString*)sessID;
 + (NSString*) loadSessionIDFromPrefs;
 
-- (void) fetchBelltimes;
+- (void) fetchBelltimes:(void (^)(NSError*))err;
 - (BOOL) belltimesAvailable;
 - (BelltimesJson*) getBelltimes;
 
-- (void) fetchToday:(void (^)(void))todayAvailable;
+- (void) fetchToday:(void (^)(void))todayAvailable error:(void (^)(NSError*))err;
 - (BOOL) todayAvailable;
 - (TodayJson*) getToday;
 @end

@@ -19,7 +19,7 @@
     [NSHTTPCookieStorage sharedHTTPCookieStorage].cookieAcceptPolicy =
     NSHTTPCookieAcceptPolicyAlways;
 
-    [NSClassFromString(@"WebView") performSelector:@selector(_enableRemoteInspector)];
+    //[NSClassFromString(@"WebView") performSelector:@selector(_enableRemoteInspector)];
     // Do any additional setup after loading the view.
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://sbhstimetable.tk/try_do_oauth"]]];
     [self.webView setDelegate:self];

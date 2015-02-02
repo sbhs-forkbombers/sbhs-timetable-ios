@@ -23,7 +23,9 @@ BelltimesJson *bells;
     
 
     api = [[ApiAccessor alloc] initWithSessionID:@""];
-    [api fetchBelltimes];
+    [api fetchBelltimes:^(NSError* e) {
+        
+    }];
     // Do any additional setup after loading the view, typically from a nib.
     [self.countdownLabel setText:@"0/10 iOS"];
     [self countdownTimer];

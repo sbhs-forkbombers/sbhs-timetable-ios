@@ -24,6 +24,8 @@ TodayJson *today;
         today = [api getToday];
         NSLog(@"reloadData - %@", today);
         [self.tableView reloadData];
+    } error:^ (NSError* e) {
+        
     }];
 }
 

@@ -23,7 +23,6 @@ NSDictionary* _today;
 
 - (NSDictionary*) getPeriod:(NSUInteger)num {
     NSString *s = [NSString stringWithFormat:@"%lu", (unsigned long)num];
-    NSLog(s);
     return _today[@"timetable"][s];
 }
 

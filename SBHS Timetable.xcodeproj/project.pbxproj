@@ -16,6 +16,7 @@
 		F432AFD21A7CC77E007B2AF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F432AFD11A7CC77E007B2AF9 /* Images.xcassets */; };
 		F432AFD51A7CC77E007B2AF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F432AFD31A7CC77E007B2AF9 /* LaunchScreen.xib */; };
 		F432AFE11A7CC77E007B2AF9 /* iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F432AFE01A7CC77E007B2AF9 /* iosTests.m */; };
+		F43C844D1A7F1BFA006D7748 /* JsonCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F43C844C1A7F1BFA006D7748 /* JsonCacheManager.m */; };
 		F466D6DD1A7E37D7008EA09F /* TodayJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F466D6D91A7E37D7008EA09F /* TodayJson.m */; };
 		F466D6DE1A7E37D7008EA09F /* TodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F466D6DB1A7E37D7008EA09F /* TodayTableViewCell.m */; };
 		F466D6DF1A7E37D7008EA09F /* TodayUITableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F466D6DC1A7E37D7008EA09F /* TodayUITableCell.xib */; };
@@ -39,7 +40,7 @@
 		35E282DF4DE90419154B8078 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1A80B849BA6D01790ACC6A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3A0EE1C7EE7CE61EA889A3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F432AFBE1A7CC77E007B2AF9 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F432AFBE1A7CC77E007B2AF9 /* SBHS Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SBHS Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F432AFC21A7CC77E007B2AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F432AFC31A7CC77E007B2AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F432AFC51A7CC77E007B2AF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +55,8 @@
 		F432AFDA1A7CC77E007B2AF9 /* iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F432AFDF1A7CC77E007B2AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F432AFE01A7CC77E007B2AF9 /* iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosTests.m; sourceTree = "<group>"; };
+		F43C844B1A7F1BFA006D7748 /* JsonCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonCacheManager.h; sourceTree = "<group>"; };
+		F43C844C1A7F1BFA006D7748 /* JsonCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonCacheManager.m; sourceTree = "<group>"; };
 		F466D6D81A7E37D7008EA09F /* TodayJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayJson.h; sourceTree = "<group>"; };
 		F466D6D91A7E37D7008EA09F /* TodayJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayJson.m; sourceTree = "<group>"; };
 		F466D6DA1A7E37D7008EA09F /* TodayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayTableViewCell.h; sourceTree = "<group>"; };
@@ -119,7 +122,7 @@
 		F432AFBF1A7CC77E007B2AF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F432AFBE1A7CC77E007B2AF9 /* ios.app */,
+				F432AFBE1A7CC77E007B2AF9 /* SBHS Timetable.app */,
 				F432AFDA1A7CC77E007B2AF9 /* iosTests.xctest */,
 			);
 			name = Products;
@@ -151,6 +154,8 @@
 				F49A7AAB1A7CE157003EA762 /* BelltimesJson.m */,
 				F49A7AB01A7CED9C003EA762 /* DateTimeHelper.h */,
 				F49A7AB11A7CED9C003EA762 /* DateTimeHelper.m */,
+				F43C844B1A7F1BFA006D7748 /* JsonCacheManager.h */,
+				F43C844C1A7F1BFA006D7748 /* JsonCacheManager.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -200,7 +205,7 @@
 			);
 			name = ios;
 			productName = ios;
-			productReference = F432AFBE1A7CC77E007B2AF9 /* ios.app */;
+			productReference = F432AFBE1A7CC77E007B2AF9 /* SBHS Timetable.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F432AFD91A7CC77E007B2AF9 /* iosTests */ = {
@@ -239,7 +244,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F432AFB91A7CC77E007B2AF9 /* Build configuration list for PBXProject "ios" */;
+			buildConfigurationList = F432AFB91A7CC77E007B2AF9 /* Build configuration list for PBXProject "SBHS Timetable" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A69A051A7E05EE0051DDB3 /* LoginViewController.m in Sources */,
+				F43C844D1A7F1BFA006D7748 /* JsonCacheManager.m in Sources */,
 				F466D6DD1A7E37D7008EA09F /* TodayJson.m in Sources */,
 				F49A7AB81A7CFFB2003EA762 /* ApiAccessor.m in Sources */,
 				F466D6DE1A7E37D7008EA09F /* TodayTableViewCell.m in Sources */,
@@ -454,7 +460,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SBHS Timetable";
 			};
 			name = Debug;
 		};
@@ -466,7 +472,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SBHS Timetable";
 			};
 			name = Release;
 		};
@@ -507,7 +513,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F432AFB91A7CC77E007B2AF9 /* Build configuration list for PBXProject "ios" */ = {
+		F432AFB91A7CC77E007B2AF9 /* Build configuration list for PBXProject "SBHS Timetable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F432AFE21A7CC77E007B2AF9 /* Debug */,

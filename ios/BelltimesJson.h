@@ -10,6 +10,8 @@
 
 @interface BelltimesJson : NSObject
 
+@property (nonatomic) BOOL stale; // is the today.json represented by this file from the cache?
+
 - (id) initWithDictionary:(NSDictionary*)json;
 
 - (NSString*) getWeek;

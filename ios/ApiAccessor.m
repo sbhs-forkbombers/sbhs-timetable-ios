@@ -27,7 +27,7 @@ AFHTTPSessionManager *manager;
     return [prefs objectForKey:@"sessionID"];
 }
 
-- (void) fetchBelltimes {
+- (void) fetchBelltimes:(void (^)(NSError*))err {
     
     [manager GET:@"/api/belltimes?date=2015-2-3" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -47,7 +47,7 @@ AFHTTPSessionManager *manager;
     return self.bells;
 }
 
-- (void) fetchToday:(void (^)(void))todayAvailable {
+- (void) fetchToday:(void (^)(void))todayAvailable error:(void (^)(NSError*))err {
     [manager GET:@"/api/today.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.today = [[TodayJson alloc] initWithDictionary:(NSDictionary*)responseObject];
