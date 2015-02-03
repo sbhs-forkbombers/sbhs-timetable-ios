@@ -26,4 +26,8 @@ NSDictionary* _today;
     return _today[@"timetable"][s];
 }
 
+- (NSDate*) getFetchTime {
+    NSInteger time = [_today[@"_fetchTime"] integerValue];
+    return [NSDate dateWithTimeIntervalSince1970:time];
+}
 @end

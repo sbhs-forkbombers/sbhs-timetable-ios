@@ -9,13 +9,15 @@
 #import "SecondViewController.h"
 #import "TodayTableViewCell.h"
 #import "ApiAccessor.h"
-@interface SecondViewController ()
+@interface SecondViewController () {
+    ApiAccessor *api;
+    TodayJson *today;
+}
 
 @end
 
 @implementation SecondViewController
-ApiAccessor *api;
-TodayJson *today;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

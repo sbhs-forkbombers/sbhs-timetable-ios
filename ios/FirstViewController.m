@@ -10,14 +10,16 @@
 #import "ApiAccessor.h"
 #import "DateTimeHelper.h"
 #import "BelltimesJson.h"
-@interface FirstViewController ()
+@interface FirstViewController () {
+    NSTimer *timer;
+    ApiAccessor *api;
+    BelltimesJson *bells;
+}
 
 @end
 
 @implementation FirstViewController
-NSTimer *timer;
-ApiAccessor *api;
-BelltimesJson *bells;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,7 +30,16 @@ BelltimesJson *bells;
     }];
     // Do any additional setup after loading the view, typically from a nib.
     [self.countdownLabel setText:@"0/10 iOS"];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [self countdownTimer];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [timer invalidate];
+    timer = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +48,6 @@ BelltimesJson *bells;
 }
 
 - (void)updateCounter:(NSTimer *)theTimer {
-
     if (![api belltimesAvailable]) {
         [self.countdownLabel setText:@"Loading..."];
     } else {
