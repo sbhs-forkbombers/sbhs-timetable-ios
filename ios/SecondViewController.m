@@ -61,8 +61,16 @@
         cell.infoLabel.text = @"with Teacher in Room";
     } else {
         NSDictionary *data = [today getPeriod:indexPath.row+1];
-        cell.subjectLabel.text = data[@"fullName"];
-        cell.infoLabel.text = [NSString stringWithFormat:@"with %@ in %@", data[@"fullTeacher"] , data[@"room"]];
+        NSString *fullName = data[@"fullName"];
+        NSString *fullTeacher = data[@"fullTeacher"];
+        NSString *room = data[@"room"];
+        if (fullName == nil) {
+            fullName = @"Free Period";
+            fullTeacher = @"nobody";
+            room = @"nowhere";
+        }
+        cell.subjectLabel.text = fullName;
+        cell.infoLabel.text = [NSString stringWithFormat:@"with %@ in %@", fullTeacher, room];
     }
     NSLog(@"Returned cell");
     return cell;

@@ -8,9 +8,14 @@
 
 #import "BelltimesJson.h"
 #import "DateTimeHelper.h"
+@interface BelltimesJson () {
+    NSDictionary *_belltimes;
+    DateTimeHelper *dth;
+}
+@end
+
 @implementation BelltimesJson 
-NSDictionary *_belltimes;
-DateTimeHelper *dth;
+
 
 - (id) initWithDictionary:(NSDictionary *)json {
     self = [super init];
@@ -67,6 +72,20 @@ DateTimeHelper *dth;
 - (NSDate*) getNextEventTime {
     return [self getTimeForIndex:[self getNextEventIndex]];
     
+}
+
+- (NSDate*) getFetchTime {
+    NSInteger time = [_belltimes[@"_fetchTime"] integerValue];
+    return [NSDate dateWithTimeIntervalSince1970:time];
+}
+
+- (BOOL) isOutdated {
+    NSDate *time = [self getFetchTime];
+    NSInteger age = -[time timeIntervalSinceNow];
+    if (age > 60 * 60) { // over an hour old
+        return YES;
+    }
+    return NO;
 }
 
 @end

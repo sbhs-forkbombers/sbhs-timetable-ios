@@ -10,10 +10,12 @@
 
 @interface TodayJson : NSObject
 
-@property (nonatomic) bool stale; // is the today.json represented by this object considered outdated according to some arbitrary rules I'll come up with later?
-
 - (id) initWithDictionary:(NSDictionary*)today;
 
 - (NSDictionary*) getPeriod:(NSUInteger)num;
+
+- (NSDate*) getFetchTime;
+
+- (BOOL) isOutdated;
 
 @end

@@ -20,6 +20,7 @@
 		F466D6DD1A7E37D7008EA09F /* TodayJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F466D6D91A7E37D7008EA09F /* TodayJson.m */; };
 		F466D6DE1A7E37D7008EA09F /* TodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F466D6DB1A7E37D7008EA09F /* TodayTableViewCell.m */; };
 		F466D6DF1A7E37D7008EA09F /* TodayUITableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F466D6DC1A7E37D7008EA09F /* TodayUITableCell.xib */; };
+		F4681ED71A80F2830036B3B9 /* ViewInfoBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4681ED61A80F2830036B3B9 /* ViewInfoBar.xib */; };
 		F49A7AAC1A7CE157003EA762 /* BelltimesJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AAB1A7CE157003EA762 /* BelltimesJson.m */; };
 		F49A7AB21A7CED9C003EA762 /* DateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB11A7CED9C003EA762 /* DateTimeHelper.m */; };
 		F49A7AB81A7CFFB2003EA762 /* ApiAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB71A7CFFB2003EA762 /* ApiAccessor.m */; };
@@ -62,6 +63,7 @@
 		F466D6DA1A7E37D7008EA09F /* TodayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayTableViewCell.h; sourceTree = "<group>"; };
 		F466D6DB1A7E37D7008EA09F /* TodayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayTableViewCell.m; sourceTree = "<group>"; };
 		F466D6DC1A7E37D7008EA09F /* TodayUITableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayUITableCell.xib; sourceTree = "<group>"; };
+		F4681ED61A80F2830036B3B9 /* ViewInfoBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewInfoBar.xib; sourceTree = "<group>"; };
 		F49A7AAA1A7CE157003EA762 /* BelltimesJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BelltimesJson.h; sourceTree = "<group>"; };
 		F49A7AAB1A7CE157003EA762 /* BelltimesJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BelltimesJson.m; sourceTree = "<group>"; };
 		F49A7AB01A7CED9C003EA762 /* DateTimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeHelper.h; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				F466D6DA1A7E37D7008EA09F /* TodayTableViewCell.h */,
 				F466D6DB1A7E37D7008EA09F /* TodayTableViewCell.m */,
 				F466D6DC1A7E37D7008EA09F /* TodayUITableCell.xib */,
+				F4681ED61A80F2830036B3B9 /* ViewInfoBar.xib */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F466D6DF1A7E37D7008EA09F /* TodayUITableCell.xib in Resources */,
+				F4681ED71A80F2830036B3B9 /* ViewInfoBar.xib in Resources */,
 				F432AFD01A7CC77E007B2AF9 /* Main.storyboard in Resources */,
 				F432AFD51A7CC77E007B2AF9 /* LaunchScreen.xib in Resources */,
 				F432AFD21A7CC77E007B2AF9 /* Images.xcassets in Resources */,

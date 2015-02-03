@@ -10,8 +10,6 @@
 
 @interface BelltimesJson : NSObject
 
-@property (nonatomic) BOOL stale; // are the belltimes represented by this file considered outdated according to some arbitrary rules I'll come up with later?
-
 - (id) initWithDictionary:(NSDictionary*)json;
 
 - (NSString*) getWeek;
@@ -23,4 +21,8 @@
 - (int) getNextEventIndex;
 
 - (NSDate*) getNextEventTime;
+
+- (NSDate*) getFetchTime;
+
+- (BOOL) isOutdated;
 @end

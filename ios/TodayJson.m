@@ -8,6 +8,8 @@
 
 #import "TodayJson.h"
 
+
+
 @implementation TodayJson
 
 NSDictionary* _today;
@@ -29,5 +31,23 @@ NSDictionary* _today;
 - (NSDate*) getFetchTime {
     NSInteger time = [_today[@"_fetchTime"] integerValue];
     return [NSDate dateWithTimeIntervalSince1970:time];
+}
+
+- (BOOL) isOutdated {
+    NSDate *time = [self getFetchTime];
+    NSInteger age = -[time timeIntervalSinceNow];
+    if (age > 60 * 60) { // over an hour old
+        return YES;
+    }
+    NSCalendar *greg = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *hm = [greg components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitWeekday) fromDate:time];
+    NSDateComponents *now = [greg components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitWeekday) fromDate:[NSDate date]];
+    if ([hm weekday] == 7 || [hm weekday] == 1) {
+        return NO;
+    }
+    if ((([hm hour] == 8 && [hm minute] < 45) || [hm hour] < 8) && [now hour] == 8 && [now minute] >= 45) {
+        return YES;
+    }
+    return NO;
 }
 @end
