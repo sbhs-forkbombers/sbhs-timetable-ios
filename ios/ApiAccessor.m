@@ -9,6 +9,7 @@
 #import "ApiAccessor.h"
 #import <AFHTTPSessionManager.h>
 #import "DateTimeHelper.h"
+#import "JsonCacheManager.h"
 static ApiAccessor* instance;
 
 @implementation ApiAccessor
@@ -31,14 +32,15 @@ AFHTTPSessionManager *manager;
 
 - (void) fetchBelltimes:(void (^)(NSError*))err {
     NSString *date = [self.dth getDateString];
+    self.bells = [JsonCacheManager loadBelltimesJson:date];
     [manager GET:[NSString stringWithFormat:@"/api/belltimes?date=%@", date] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.bells = [[BelltimesJson alloc] initWithDictionary:(NSDictionary*)responseObject];
+        [JsonCacheManager cacheBelltimesJson:date data:(NSDictionary*)responseObject];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
 }
 
 - (BOOL) belltimesAvailable {
@@ -50,13 +52,21 @@ AFHTTPSessionManager *manager;
 }
 
 - (void) fetchToday:(void (^)(void))todayAvailable error:(void (^)(NSError*))err {
+    
+    NSString *date = [self.dth getDateString];
+    self.today = [JsonCacheManager loadTodayJson:date];
+    if (self.today != nil) {
+        todayAvailable();
+    }
     [manager GET:@"/api/today.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.today = [[TodayJson alloc] initWithDictionary:(NSDictionary*)responseObject];
+        [JsonCacheManager cacheTodayJson:date data:(NSDictionary*)responseObject];
         todayAvailable();
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
+        
     }];
 }
 

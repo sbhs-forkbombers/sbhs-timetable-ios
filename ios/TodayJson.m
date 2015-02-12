@@ -7,7 +7,7 @@
 //
 
 #import "TodayJson.h"
-
+#import "TodayJson_Period.h"
 
 
 @implementation TodayJson
@@ -23,9 +23,9 @@ NSDictionary* _today;
     return self;
 }
 
-- (NSDictionary*) getPeriod:(NSUInteger)num {
+- (TodayJson_Period*) getPeriod:(NSUInteger)num {
     NSString *s = [NSString stringWithFormat:@"%lu", (unsigned long)num];
-    return _today[@"timetable"][s];
+    return [[TodayJson_Period alloc] initWithDictionary:_today[@"timetable"][s]];
 }
 
 - (NSDate*) getFetchTime {

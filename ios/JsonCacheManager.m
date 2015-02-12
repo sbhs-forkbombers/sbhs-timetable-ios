@@ -22,12 +22,14 @@
 }
 
 + (TodayJson*) loadTodayJson:(NSString *)date {
+    NSLog(@"Get today json from cache");
     NSDictionary *dict = [self loadDictionary:date withName:@"today"];
     if (dict == nil) return nil;
     return [[TodayJson alloc] initWithDictionary:dict];
 }
 
 + (BelltimesJson*) loadBelltimesJson:(NSString *)date {
+    NSLog(@"Get belltimes from cache");
     NSDictionary *dict = [self loadDictionary:date withName:@"belltimes"];
     if (dict == nil) return nil;
     return [[BelltimesJson alloc] initWithDictionary:dict];

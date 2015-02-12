@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "TodayTableViewCell.h"
 #import "ApiAccessor.h"
+#import "TodayJson_Period.h"
 @interface SecondViewController () {
     ApiAccessor *api;
     TodayJson *today;
@@ -60,10 +61,10 @@
         cell.subjectLabel.text = @"Subject";
         cell.infoLabel.text = @"with Teacher in Room";
     } else {
-        NSDictionary *data = [today getPeriod:indexPath.row+1];
-        NSString *fullName = data[@"fullName"];
-        NSString *fullTeacher = data[@"fullTeacher"];
-        NSString *room = data[@"room"];
+        TodayJson_Period *data = [today getPeriod:indexPath.row+1];
+        NSString *fullName = [data subject];
+        NSString *fullTeacher = [data teacher];
+        NSString *room = [data room];
         if (fullName == nil) {
             fullName = @"Free Period";
             fullTeacher = @"nobody";

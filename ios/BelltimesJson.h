@@ -25,4 +25,5 @@
 - (NSDate*) getFetchTime;
 
 - (BOOL) isOutdated;
+
 @end

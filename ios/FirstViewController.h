@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *periodLabel;
 @property (strong, nonatomic) IBOutlet UILabel *countdownLabel;
+@property (strong, nonatomic) IBOutlet UILabel *statusLabel;
 
 - (void)updateCounter:(NSTimer *)theTimer;
 - (void)countdownTimer;

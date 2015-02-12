@@ -25,6 +25,7 @@
 		F49A7AB21A7CED9C003EA762 /* DateTimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB11A7CED9C003EA762 /* DateTimeHelper.m */; };
 		F49A7AB81A7CFFB2003EA762 /* ApiAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F49A7AB71A7CFFB2003EA762 /* ApiAccessor.m */; };
 		F4A69A051A7E05EE0051DDB3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A69A041A7E05EE0051DDB3 /* LoginViewController.m */; };
+		F4C5F5D61A8A14AE0092E61E /* TodayJson_Period.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C5F5D51A8A14AE0092E61E /* TodayJson_Period.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		35E282DF4DE90419154B8078 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7A1A80B849BA6D01790ACC6A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3A0EE1C7EE7CE61EA889A3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F41A3F301A8CC9410015905B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F432AFBE1A7CC77E007B2AF9 /* SBHS Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SBHS Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F432AFC21A7CC77E007B2AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F432AFC31A7CC77E007B2AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		F49A7AB71A7CFFB2003EA762 /* ApiAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiAccessor.m; sourceTree = "<group>"; };
 		F4A69A031A7E05EE0051DDB3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F4A69A041A7E05EE0051DDB3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F4C5F5D41A8A14AE0092E61E /* TodayJson_Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayJson_Period.h; sourceTree = "<group>"; };
+		F4C5F5D51A8A14AE0092E61E /* TodayJson_Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayJson_Period.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		5C4BC7EBC80A0963FD81C863 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F41A3F301A8CC9410015905B /* SystemConfiguration.framework */,
 				7A1A80B849BA6D01790ACC6A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -155,6 +160,8 @@
 				F432AFC11A7CC77E007B2AF9 /* Supporting Files */,
 				F466D6D81A7E37D7008EA09F /* TodayJson.h */,
 				F466D6D91A7E37D7008EA09F /* TodayJson.m */,
+				F4C5F5D41A8A14AE0092E61E /* TodayJson_Period.h */,
+				F4C5F5D51A8A14AE0092E61E /* TodayJson_Period.m */,
 				F466D6DA1A7E37D7008EA09F /* TodayTableViewCell.h */,
 				F466D6DB1A7E37D7008EA09F /* TodayTableViewCell.m */,
 				F466D6DC1A7E37D7008EA09F /* TodayUITableCell.xib */,
@@ -336,6 +343,7 @@
 				F49A7AB21A7CED9C003EA762 /* DateTimeHelper.m in Sources */,
 				F432AFCA1A7CC77E007B2AF9 /* FirstViewController.m in Sources */,
 				F49A7AAC1A7CE157003EA762 /* BelltimesJson.m in Sources */,
+				F4C5F5D61A8A14AE0092E61E /* TodayJson_Period.m in Sources */,
 				F432AFC41A7CC77E007B2AF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

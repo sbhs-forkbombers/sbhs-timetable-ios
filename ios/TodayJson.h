@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "TodayJson_Period.h"
 @interface TodayJson : NSObject
 
 - (id) initWithDictionary:(NSDictionary*)today;
 
-- (NSDictionary*) getPeriod:(NSUInteger)num;
+- (TodayJson_Period*) getPeriod:(NSUInteger)num;
 
 - (NSDate*) getFetchTime;
 

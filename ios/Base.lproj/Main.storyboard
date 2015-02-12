@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Countdown-->
@@ -30,33 +29,33 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkI-9m-dCA">
-                                <rect key="frame" x="0.0" y="20" width="600" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="S9Y-vH-XxN"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="pMe-7g-ls9" kind="embed" id="Q8J-ZD-DeA"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something happens" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YV-Ls-1UV">
                                 <rect key="frame" x="149" y="94" width="303" height="43"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi there!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83D-FP-wIK">
+                                <rect key="frame" x="264" y="20" width="73" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="G5e-jT-Am6"/>
+                                    <constraint firstAttribute="width" constant="73" id="U9h-VI-p53"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vkI-9m-dCA" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="5Vo-1U-ke2"/>
                             <constraint firstItem="rLm-gc-cQS" firstAttribute="top" secondItem="I1V-wf-eqY" secondAttribute="top" constant="26" id="9bV-cn-cRD"/>
+                            <constraint firstItem="83D-FP-wIK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Cl8-yD-wyX"/>
                             <constraint firstItem="I1V-wf-eqY" firstAttribute="top" secondItem="7YV-Ls-1UV" secondAttribute="bottom" constant="8" id="F86-7e-dt0"/>
                             <constraint firstItem="rLm-gc-cQS" firstAttribute="top" secondItem="I1V-wf-eqY" secondAttribute="bottom" constant="8" id="G9v-47-lT8"/>
+                            <constraint firstAttribute="centerX" secondItem="83D-FP-wIK" secondAttribute="centerX" id="H5S-2r-MDb"/>
                             <constraint firstAttribute="centerX" secondItem="rLm-gc-cQS" secondAttribute="centerX" id="hrE-li-XHA"/>
-                            <constraint firstAttribute="centerX" secondItem="vkI-9m-dCA" secondAttribute="centerX" id="mhA-gA-CwA"/>
                             <constraint firstItem="7YV-Ls-1UV" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="74" id="sBo-vs-A3h"/>
                             <constraint firstAttribute="centerX" secondItem="I1V-wf-eqY" secondAttribute="centerX" id="ukU-xk-g44"/>
-                            <constraint firstItem="vkI-9m-dCA" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="wx0-kV-YXd"/>
                             <constraint firstAttribute="centerX" secondItem="7YV-Ls-1UV" secondAttribute="centerX" id="zht-8k-fSm"/>
                         </constraints>
                         <variation key="default">
@@ -69,11 +68,12 @@
                     <connections>
                         <outlet property="countdownLabel" destination="rLm-gc-cQS" id="pWE-lF-eLh"/>
                         <outlet property="periodLabel" destination="7YV-Ls-1UV" id="4du-Pw-5eu"/>
+                        <outlet property="statusLabel" destination="83D-FP-wIK" id="YV4-k3-TIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-303"/>
+            <point key="canvasLocation" x="816" y="-276"/>
         </scene>
         <!--Today's Subjects-->
         <scene sceneID="wg7-f3-ORb">
@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1B6-PR-Yo3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1B6-PR-Yo3">
                                 <rect key="frame" x="0.0" y="20" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -163,24 +163,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="XxB-G4-Ems">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pMe-7g-ls9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fyJ-Wg-0iQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Koe-6r-dHG"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c7f-lr-4Gr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ns-O2-nee" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
