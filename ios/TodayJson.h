@@ -18,4 +18,6 @@
 
 - (BOOL) isOutdated;
 
+- (BOOL) variationsVisible;
+
 @end

@@ -25,7 +25,7 @@ NSDictionary* _today;
 
 - (TodayJson_Period*) getPeriod:(NSUInteger)num {
     NSString *s = [NSString stringWithFormat:@"%lu", (unsigned long)num];
-    return [[TodayJson_Period alloc] initWithDictionary:_today[@"timetable"][s]];
+    return [[TodayJson_Period alloc] initWithDictionary:_today[@"timetable"][s] parent:_today];
 }
 
 - (NSDate*) getFetchTime {
@@ -49,5 +49,9 @@ NSDictionary* _today;
         return YES;
     }
     return NO;
+}
+
+- (BOOL) variationsVisible {
+    return [_today[@"variationsFinalised"] boolValue];
 }
 @end

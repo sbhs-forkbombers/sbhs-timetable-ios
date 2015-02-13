@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface TodayJson_Period : NSObject
 
-- (id) initWithDictionary:(NSDictionary*)dict;
+- (id) initWithDictionary:(NSDictionary*)dict parent:(NSDictionary*)d;
 
 - (BOOL) changed;
 - (BOOL) roomChanged;

@@ -69,7 +69,7 @@
     date = [calendar dateFromComponents:[calendar components:preservedComponents fromDate:date]];
     NSInteger secondsLeft;
     if ([self needsMidnightCountdown]) {
-        secondsLeft = [date timeIntervalSinceNow] + 86400;
+        secondsLeft = [date timeIntervalSinceNow] + 86401;
     } else {
         secondsLeft = [date timeIntervalSinceNow];
     }
@@ -77,6 +77,7 @@
 }
 
 - (NSString*) getDateString {
+    //NSLog(@"NMC: %d, dayOffset: %d, nextSchoolDay: %@", [self needsMidnightCountdown], [self getDayOffset], [self getNextSchoolDay]);
     NSDateFormatter *f = [[NSDateFormatter alloc] init];
     [f setDateFormat:@"yyyy-MM-dd"];
     return [f stringFromDate:[self getNextSchoolDay]];

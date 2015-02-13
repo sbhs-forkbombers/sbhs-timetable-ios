@@ -32,6 +32,7 @@ AFHTTPSessionManager *manager;
 
 - (void) fetchBelltimes:(void (^)(NSError*))err {
     NSString *date = [self.dth getDateString];
+    NSLog(@"Date: %@", date);
     self.bells = [JsonCacheManager loadBelltimesJson:date];
     [manager GET:[NSString stringWithFormat:@"/api/belltimes?date=%@", date] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
